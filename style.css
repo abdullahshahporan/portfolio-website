@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+:root{
+    --bg-color: #fff;
+    --snd-bg-color: #d5fdf9;
+    --text-color: #333;
+    --main-color: #007f5f;
+}
+
+html{
+    font-size: 63%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Header Section */
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: linear-gradient(135deg, var(--main-color), #004d40);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.234);
+    transition: all 0.5s ease;
+}
+
+.logo{
+    font-size: 3.5rem;
+    color: var(--bg-color);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+    color: var(--snd-bg-color);
+}
+
+.navbar a{
+    font-size: 2rem;
+    color: var(--bg-color);
+    margin-left: 4rem;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--snd-bg-color);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after, .navbar a.active::after{
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--snd-bg-color);
+}
+
+#menu-icon{
+    font-size: 4rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    display: none; /* Hide initially for larger screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        display: none;
+        flex-direction: column;
+        background-color: var(--main-color);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 2rem;
+        border-radius: 0 0 0 10px;
+    }
+
+    .navbar a{
+        margin: 1rem 0;
+        font-size: 2.5rem;
+    }
+
+    .navbar.active{
+        display: flex;
+    }
+}
