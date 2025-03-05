@@ -264,3 +264,197 @@ span{
     margin: 2rem 0 3rem;
 }
 /*About Section Ends*/
+/* Education Section Starts */
+.education {
+    background-color: var(--bg-color);
+    padding: 6rem 9%;
+    margin-top: 6rem;
+}
+
+.education-title {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Container for each education item */
+.education-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 5rem;
+    transition: transform 0.3s ease;
+}
+
+.education-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Image (Left Side) */
+.edu-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edu-img img {
+    width: 10vw;
+    border-radius: 45%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.edu-img img:hover {
+    box-shadow: 0 0 25px var(--snd-bg-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--snd-bg-color);
+}
+.edu--img-kuet
+{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edu--img-kuet img{
+    width: 12vw;
+    padding: 2rem;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.edu--img-kuet img:hover{
+    box-shadow: 0 0 25px var(--snd-bg-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--snd-bg-color);
+}
+
+/* Content (Right Side) */
+.edu-content {
+    flex: 3;
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.edu-content h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.edu-content p {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+/* Education Section Ends */
+/* Projects Section Starts */
+.projects h2{
+    text-align: center;
+   margin-bottom: 5rem;
+}
+.projects-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.projects-container .project-box {
+    flex: 1 1 30rem;
+    background-color: var(--snd-bg-color);
+    padding: 6rem 2rem 6rem;
+    border-radius: 2rem; 
+    text-align: center;
+    border: 0.3rem solid var(--bg-color);
+    transition: 0.3s ease;
+}
+
+.projects-container .project-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+.project-box h3{
+    font-size: 2.6rem;
+   
+}
+.project-box p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+/* Projects Section Ends */
+/* Skills section styling */
+.skills {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--main-color);
+}
+
+.skills .heading {
+    font-size: 10rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.skills .heading span {
+    color: #00ff00;
+}
+
+/* Skills container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+     /* Prevents overflow issues */
+}
+
+/* Horizontal skill boxes */
+.skill-box {
+    display: flex;
+    gap: 20px;
+}
+
+/* Skill box styling */
+.skill-box div {
+    display: flex;
+    flex-direction: column; /* Align icon on top, text at the bottom */
+    align-items: center;
+    justify-content: center;
+    width: 180px; /* Adjusted width */
+    height: 200px; /* Adjusted height */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+/* Skill icons */
+.skill-box i {
+    font-size: 8rem; /* Adjusted icon size */
+    color: #004d00;
+}
+
+/* Skill name */
+.skill-box p {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: #004d00;
+}
+
+/* Hover effect */
+.skill-box div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.5);
+}
+
+.skill-box div:hover i {
+    color: #00ff00;
+}
