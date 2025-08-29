@@ -331,6 +331,169 @@ body {
   border-radius: 12px;
   text-align: center;
 }
+/*Projects*/
+
+.projects-title {
+  text-align: center;
+  font-size: clamp(34px, 5.8vw, 48px);
+  margin: 0 0 22px;
+  letter-spacing: 0.3px;
+}
+
+/* Exact columns so the video never grows too big */
+.project-grid {
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+@media (min-width: 700px) and (max-width: 1099px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+@media (max-width: 699px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.project-card {
+  position: relative;
+  background: linear-gradient(180deg, #11192a 0%, #0b121c 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #17d1ea;
+  box-shadow: 0 14px 40px rgba(23, 209, 234, 0.14);
+}
+
+/* Video wrapper keeps perfect 16:9 and clips the video */
+.project-media {
+  position: relative;
+  aspect-ratio: 16/9; /* modern browsers */
+  background: #0b121c;
+  overflow: hidden;
+}
+.project-media video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transform: scale(1.001); /* fixes sub-pixel gaps on some GPUs */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.project-card:hover .project-media video {
+  transform: scale(1.03);
+  filter: brightness(1.03);
+}
+
+/* Nice bottom fade on video so text reads well even if poster is bright */
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    rgba(11, 18, 28, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Older Safari without aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+  .project-media {
+    position: relative;
+    padding-top: 56.25%;
+  }
+  .project-media video {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.project-body {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 140px; /* keeps card heights similar even if desc is short */
+}
+.project-title {
+  font-weight: 900;
+  font-size: 1.08rem;
+  letter-spacing: 0.2px;
+}
+.project-desc {
+  color: #cfe1ff;
+  opacity: 0.98;
+  line-height: 1.45;
+  font-size: 1.02rem;
+}
+
+.project-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: linear-gradient(90deg, #00bcd4 0%, #5d5bff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(93, 91, 255, 0.25);
+  filter: saturate(1.06);
+}
+
+/* Pager controls */
+.project-controls {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.proj-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #101a2d;
+  color: #eaf1ff;
+  border: 1px solid #22304a;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.proj-btn:hover {
+  transform: translateY(-2px);
+  border-color: #00bcd4;
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.12);
+}
+.proj-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 
 /*Generic link hover*/
 section a:not(.btn):not(.navbar a) {
@@ -385,4 +548,43 @@ a:focus-visible,
   opacity: 1;
   transform: none;
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* Desktop defaults */
+#menu-icon {
+  display: none; /* <-- hide on desktop */
+  font-size: 28px;
+  color: #eaf1ff;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex; /* desktop shows links inline */
+  gap: 28px;
+  align-items: center;
+}
+
+/* Mobile-only nav */
+@media (max-width: 991px) {
+  #menu-icon {
+    display: inline-flex;
+  } /* <-- show burger on small screens */
+
+  .navbar {
+    position: fixed;
+    right: -100%;
+    top: 64px;
+    width: min(260px, 86vw);
+    background: #0f1626;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: right 0.25s ease;
+    z-index: 1000;
+  }
+  .navbar.active {
+    right: 20px;
+  }
 }
