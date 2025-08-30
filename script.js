@@ -196,3 +196,44 @@ document.addEventListener("DOMContentLoaded", () => {
   loadEducationHTML();
   loadProjectsHTML();
 });
+// Skills slider arrows functionality (mobile swipe and arrows)
+const slider = document.querySelector(".skills-slider");
+const leftBtn = document.querySelector(".left-btn");
+const rightBtn = document.querySelector(".right-btn");
+
+// Left button scrolls to the left
+leftBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: -slider.offsetWidth, behavior: "smooth" });
+});
+
+// Right button scrolls to the right
+rightBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: slider.offsetWidth, behavior: "smooth" });
+});
+
+// Ensure that when user reaches the start or end of the slider, the buttons are disabled
+slider.addEventListener("scroll", function () {
+  if (slider.scrollLeft === 0) {
+    leftBtn.disabled = true;
+  } else {
+    leftBtn.disabled = false;
+  }
+
+  if (slider.scrollWidth === slider.scrollLeft + slider.clientWidth) {
+    rightBtn.disabled = true;
+  } else {
+    rightBtn.disabled = false;
+  }
+});
+
+// Services slider arrows functionality (mobile swipe and arrows)
+const slider2 = document.querySelector(".services-grid");
+const leftBtn2 = document.querySelector(".left-btn");
+const rightBtn2 = document.querySelector(".right-btn");
+
+leftBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: -slider.offsetWidth, behavior: "smooth" });
+});
+rightBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: slider.offsetWidth, behavior: "smooth" });
+});

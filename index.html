@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abdullah Md. Shahporan</title>
 
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/portfolio/style.css" />
 </head>
+
 <body>
   <!-- Header -->
   <header class="header glass">
     <a href="#home" class="logo">Abdullah Md. Shahporan</a>
     <i class="bx bx-menu" id="menu-icon" aria-label="Open menu"></i>
     <nav class="navbar">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#education" class="nav-link">Education</a>
-    
-      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#home" class="nav-link">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="#about" class="nav-link">
+        <i class="fas fa-user"></i> About
+      </a>
+      <a href="#education" class="nav-link">
+        <i class="fas fa-graduation-cap"></i> Education
+      </a>
+      <a href="#projects" class="nav-link">
+        <i class="fas fa-project-diagram"></i> Projects
+      </a>
+      <a href="#skills" class="nav-link">
+        <i class="fas fa-cogs"></i> Skills
+      </a>
+      <a href="#services" class="nav-link">
+        <i class="fas fa-briefcase"></i> Services
+      </a>
+      <a href="#contact" class="nav-link">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
 
     </nav>
   </header>
@@ -41,7 +60,8 @@
         <a class="btn primary" href="#">Download CV</a>
         <div class="social-media">
           <a href="https://github.com/abdullahshahporan" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/abdullah-md-shahporan/" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/abdullah-md-shahporan/" aria-label="LinkedIn"><i
+              class="bx bxl-linkedin"></i></a>
           <a href="https://www.facebook.com/abdullahshahporan" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
         </div>
@@ -69,18 +89,73 @@
   <section class="education section" id="education">
     <h2 class="education-title">Education</h2>
     <div id="edu-list" class="edu-grid"><!-- injected --></div>
-    <noscript><p class="empty">Enable JavaScript to load Education.</p></noscript>
+    <noscript>
+      <p class="empty">Enable JavaScript to load Education.</p>
+    </noscript>
   </section>
-<!-- Projects -->
-<section class="projects section" id="projects">
-  <h2 class="projects-title">Projects</h2>
-  <div id="project-list" class="project-grid"></div>
-  <div class="project-controls">
-    <button class="proj-btn prev" aria-label="Previous projects">‹</button>
-    <button class="proj-btn next" aria-label="Next projects">›</button>
-  </div>
-  <noscript><p class="empty">Enable JavaScript to load Projects.</p></noscript>
-</section>
+  <!-- Projects -->
+  <section class="projects section" id="projects">
+    <h2 class="projects-title">Projects</h2>
+    <div id="project-list" class="project-grid"></div>
+    <div class="project-controls">
+      <button class="proj-btn prev" aria-label="Previous projects">‹</button>
+      <button class="proj-btn next" aria-label="Next projects">›</button>
+    </div>
+    <noscript>
+      <p class="empty">Enable JavaScript to load Projects.</p>
+    </noscript>
+  </section>
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <button class="slider-btn left-btn">‹</button>
+      <div class="skills-slider" id="skills-slider">
+        <div class="skill-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+        <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="skill-card"><i class="fab fa-php"></i><span>PHP</span></div>
+        <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Flutter</span></div>
+        <div class="skill-card"><i class="fab fa-cuttlefish"></i><span>C++</span></div>
+        <div class="skill-card"><i class="fab fa-cuttlefish"></i><span>C</span></div>
+        <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
+
+      </div>
+      <button class="slider-btn right-btn">›</button>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section class="services section" id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <!-- Web Development Service -->
+      <div class="service-card">
+        <img src="assets/web.jpg" alt="Web Development" class="service-image">
+        <h3>Web Development</h3>
+        <p>Build responsive, modern websites with HTML, CSS, JavaScript, PHP.</p>
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+
+      <!-- Mobile App Development Service -->
+      <div class="service-card">
+        <img src="assets/app.jpg" alt="Mobile App Development" class="service-image">
+        <h3>Mobile App Development</h3>
+        <p>Develop cross-platform apps using Flutter with sleek UI/UX design.</p>
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+
+      <!-- Database & Backend Service -->
+      <div class="service-card">
+        <img src="assets/back.jpg" alt="Database & Backend" class="service-image">
+        <h3>Database & Backend</h3>
+        <p>Design robust databases and backend APIs for your applications.</p>
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+
 
 
 
@@ -97,4 +172,5 @@
 
   <script src="/portfolio/script.js"></script>
 </body>
+
 </html>

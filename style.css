@@ -1,3 +1,22 @@
+/* Style for Navigation Links */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.nav-link i {
+  font-size: 20px; /* Adjust the icon size */
+}
+
+.nav-link:hover {
+  color: #00bcd4; /* Change color on hover */
+}
+
 /*Global Base*/
 * {
   box-sizing: border-box;
@@ -493,6 +512,281 @@ body {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+/*Skills Section*/
+.skills {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #101a2d, #0b121c);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 44px);
+  margin-bottom: 30px;
+  color: #00bcd4;
+}
+
+/* Skills Container */
+.skills-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Skills Slider */
+.skills-slider {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none; /* Firefox */
+  justify-content: flex-start;
+}
+
+.skills-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Skill Card Styling */
+.skill-card {
+  min-width: 200px; /* Adjust to fit 3 icons */
+  background: linear-gradient(180deg, #0f1626, #101a2d);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px 10px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.15);
+  background: linear-gradient(180deg, #17d1ea 0%, #1f8a9e 100%);
+}
+
+/* Icons */
+.skill-card i {
+  font-size: 60px; /* Larger icons */
+  margin-bottom: 15px;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card:hover i {
+  transform: scale(1.2); /* Slightly enlarge icons on hover */
+  filter: brightness(1.1);
+}
+
+.skill-card span {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Slider Arrows */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #101a2d;
+  border: 1px solid #22304a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #00bcd4;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2);
+}
+
+.left-btn {
+  left: -20px;
+}
+
+.right-btn {
+  right: -20px;
+}
+
+/*Mobile: Show 3 Icons at a time*/
+@media (max-width: 699px) {
+  .skills-slider {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  }
+
+  .skill-card {
+    min-width: 33.33%; /* Takes the full width of 3 cards */
+    margin: 0 5px;
+  }
+
+  .slider-btn {
+    display: block; /* Show arrows on small screens */
+  }
+
+  .slider-btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+/*Services Section */
+.services {
+  padding: 60px 20px;
+  background: linear-gradient(180deg, #101a2d, #0b121c);
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(32px, 5.5vw, 48px);
+  margin-bottom: 30px;
+  color: #00bcd4;
+}
+
+/* Services Grid (Responsive) */
+.services-grid {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card {
+  background: linear-gradient(180deg, #0f1626, #101a2d);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  min-width: 300px; /* Minimum width for the service card */
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 188, 212, 0.2);
+  background: linear-gradient(180deg, #00bcd4 0%, #1f8a9e 100%);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #cfe1ff;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* Service Image - Increased size */
+.service-image {
+  width: 100%;
+  height: 220px; /* Increased image size */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Button Style */
+.btn {
+  background: linear-gradient(90deg, #17d1ea 0%, #5d5bff 100%);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 188, 212, 0.2);
+  background: linear-gradient(90deg, #5d5bff 0%, #17d1ea 100%);
+}
+
+/* Slider Arrows */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #101a2d;
+  border: 1px solid #22304a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #00bcd4;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.2);
+}
+
+.left-btn {
+  left: -20px;
+}
+
+.right-btn {
+  right: -20px;
+}
+
+/* Mobile: Allow touch scrolling, but only show one card at a time */
+@media (max-width: 699px) {
+  .services-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+
+  .service-card {
+    min-width: 100%; /* Takes the full width of the container */
+    margin: 0 5px;
+  }
+
+  .slider-btn {
+    display: block; /* Show arrows on small screens */
+  }
+
+  .slider-btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 }
 
 /*Generic link hover*/
