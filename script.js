@@ -237,3 +237,4 @@ leftBtn.addEventListener("click", () => {
 rightBtn.addEventListener("click", () => {
   slider.scrollBy({ left: slider.offsetWidth, behavior: "smooth" });
 });
+

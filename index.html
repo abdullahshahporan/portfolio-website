@@ -9,6 +9,7 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/responses.css">
 </head>
 
 <body>
@@ -59,11 +60,11 @@
       <div class="cta-row">
         <a class="btn primary" href="#">Download CV</a>
         <div class="social-media">
-          <a href="https://github.com/abdullahshahporan" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/abdullah-md-shahporan/" aria-label="LinkedIn"><i
+          <a href="https://github.com/abdullahshahporan" aria-label="GitHub" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/abdullah-md-shahporan/" aria-label="LinkedIn" target="_blank"><i
               class="bx bxl-linkedin"></i></a>
-          <a href="https://www.facebook.com/abdullahshahporan" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.facebook.com/abdullahshahporan" aria-label="Facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/abdullahmd.shahporan" aria-label="Instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -155,6 +156,39 @@
     </div>
   </section>
 
+<!-- Contact Form Section -->
+<section class="contact section" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <form action="/portfolio/admin/submit_form.php" method="POST">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="contact_number">Contact Number</label>
+      <input type="text" id="contact_number" name="contact_number" required placeholder="Enter your contact number">
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email address">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required placeholder="Write your message here"></textarea>
+    </div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+<!-- Success Notification Modal -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h3>Thank you for contacting us!</h3>
+    <p>Your message has been received successfully.</p>
+    <a href="/portfolio/index.html" class="btn btn-primary">Go to Home</a>
+  </div>
+</div>
+
 
 
 
@@ -162,10 +196,10 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="social">
-      <a href="https://github.com/abdullahshahporan"><i class="bx bxl-github"></i></a>
-      <a href="https://www.linkedin.com/in/abdullah-md-shahporan/"><i class="bx bxl-linkedin"></i></a>
-      <a href="https://www.facebook.com/abdullahshahporan"><i class="bx bxl-facebook"></i></a>
-      <a href="#"><i class="bx bxl-instagram"></i></a>
+      <a href="https://github.com/abdullahshahporan" target="_blank"><i class="bx bxl-github"></i></a>
+      <a href="https://www.linkedin.com/in/abdullah-md-shahporan/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://www.facebook.com/abdullahshahporan" target="_blank"><i class="bx bxl-facebook"></i></a>
+      <a href="https://www.instagram.com/abdullahmd.shahporan" target="_blank"><i class="bx bxl-instagram"></i></a>
     </div>
     <p class="copyright">&copy; Abdullah Md. Shahporan. All Rights Reserved</p>
   </footer>

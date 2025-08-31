@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1626;
+      color: #eaf1ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: all 0.3s ease;
+    }
+
+    /* Cookie Consent Modal */
+    .cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      display: none;
+    }
+
+    .cookie-consent button {
+      background-color: #17d1ea;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cookie-consent button:hover {
+      background-color: #1f8a9e;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 40px;
+      background-color: #101a2d;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .login-container {
+      background-color: #101a2d;
+      border-radius: 14px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #0b121c;
+      border: 1px solid #22304a;
+      border-radius: 10px;
+      color: #eaf1ff;
+      font-size: 16px;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #00bcd4;
+    }
+
+    .btn {
+      background-color: #00bcd4;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1f8a9e;
+    }
+
+    .error {
+      color: #ff6;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cookie Consent Modal -->
+  <div class="cookie-consent" id="cookie-consent">
+    <p>We use cookies to enhance your experience on our website. By clicking "Accept," you agree to our use of cookies.</p>
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <!-- Login Form -->
+  <div class="login-container" id="login-container">
+    <h1>Admin Login</h1>
+    <form id="login-form">
+      <input type="email" id="email" class="input-field" placeholder="Email" required>
+      <input type="password" id="password" class="input-field" placeholder="Password" required>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <p id="error-message" class="error" style="display: none;">Invalid credentials. Please try again.</p>
+  </div>
+
+  <script>
+    const correctEmail = "abdullahshahporan@gmail.com";
+    const correctPassword = "123456";
+
+    // Show the cookie consent box if not accepted
+    if (!sessionStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-consent').style.display = 'block';
+    }
+
+    // Accept Cookies
+    function acceptCookies() {
+      document.getElementById('cookie-consent').style.display = 'none';
+      sessionStorage.setItem('cookiesAccepted', 'true');
+    }
+
+    // Login functionality
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (email === correctEmail && password === correctPassword) {
+        sessionStorage.setItem('loggedIn', true);  // Store login state
+        window.location.href = '/portfolio/admin.html';  // Redirect to admin panel
+      } else {
+        document.getElementById('error-message').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
+

@@ -16,7 +16,6 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      transition: all 0.3s ease;
     }
 
     .container {
@@ -26,68 +25,30 @@
       background-color: #101a2d;
       border-radius: 14px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      display: none;
+      display: block;
     }
 
-    .login-container {
-      background-color: #101a2d;
-      border-radius: 14px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      width: 100%;
+    .navbar {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      color: white;
     }
 
-    .input-field {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      background-color: #0b121c;
-      border: 1px solid #22304a;
-      border-radius: 10px;
-      color: #eaf1ff;
-      font-size: 16px;
+    .btn-top {
+      padding: 12px 24px;
+      background-color: #d32f2f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
     }
 
-    .input-field:focus {
-      outline: none;
-      border-color: #00bcd4;
-    }
-
-    .btn {
-      background-color: #00bcd4;
-      color: #fff;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      width: 100%;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #1f8a9e;
-    }
-
-    .error {
-      color: #ff6;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .empty {
-      text-align: center;
-      color: #f44336;
-      font-size: 1.2rem;
+    .btn-top:hover {
+      background-color: #c62828;
     }
 
     .section {
@@ -111,75 +72,25 @@
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      background-color: #17d1ea;
-    }
-
-    .btn-primary:hover {
-      background-color: #1f8a9e;
-    }
-
-    .btn-danger {
-      background-color: #f44336;
-    }
-
-    .btn-danger:hover {
-      background-color: #d32f2f;
-    }
-
-    .btn-warning {
-      background-color: #ff9800;
-    }
-
-    .btn-warning:hover {
-      background-color: #f57c00;
-    }
-
-    .action-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-
-    .btn-top {
-      padding: 12px 24px;
-      background-color: #17d1ea;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    .btn-top:hover {
+    .btn {
       background-color: #00bcd4;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
     }
 
-    .btn-top-active {
-      background-color: #d32f2f;
+    .btn:hover {
+      background-color: #1f8a9e;
     }
   </style>
 </head>
 <body>
 
-  <!-- Login Form -->
-  <div class="login-container" id="login-container">
-    <h1>Admin Login</h1>
-    <form id="login-form">
-      <input type="email" id="email" class="input-field" placeholder="Email" required>
-      <input type="password" id="password" class="input-field" placeholder="Password" required>
-      <button type="submit" class="btn">Login</button>
-    </form>
-    <p id="error-message" class="error" style="display: none;">Invalid credentials. Please try again.</p>
-  </div>
-
   <!-- Admin Panel -->
   <div class="container" id="admin-container">
-
     <!-- Navbar -->
     <div class="navbar">
       <h1>Admin Panel</h1>
@@ -190,9 +101,9 @@
     <div class="section">
       <h2>Education Management</h2>
       <div class="button-group">
-        <a href="/portfolio/admin/education_upload.php" class="btn btn-primary">Add Education</a>
-        <a href="/portfolio/admin/education_render.php?manage=1" class="btn btn-primary">View Education List</a>
-        <a href="/portfolio/admin/education_edit.php" class="btn btn-warning">Edit/Delete Education</a>
+        <a href="/portfolio/admin/education_upload.php" class="btn">Add Education</a>
+        <a href="/portfolio/admin/education_render.php?manage=1" class="btn">View Education List</a>
+        <a href="/portfolio/admin/education_edit.php" class="btn">Edit/Delete Education</a>
       </div>
     </div>
 
@@ -206,31 +117,27 @@
       </div>
     </div>
 
+    <!-- Form Responses Section -->
+    <div class="section">
+      <h2>Form Responses</h2>
+      <div class="button-group">
+        <a href="/portfolio/admin/view_responses.php" class="btn">View Responses</a>
+      </div>
+    </div>
+
   </div>
 
   <script>
-    const correctEmail = "abdullahshahporan@gmail.com";
-    const correctPassword = "123456";
-
-    // Show admin panel if correct credentials
-    document.getElementById('login-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-
-      if (email === correctEmail && password === correctPassword) {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('admin-container').style.display = 'block';
-      } else {
-        document.getElementById('error-message').style.display = 'block';
-      }
-    });
+    // Check if the user is logged in using sessionStorage
+    if (!sessionStorage.getItem('loggedIn')) {
+      window.location.href = '/portfolio/login.html';  // Redirect to login page if not logged in
+    }
 
     // Logout function
     document.getElementById('logout-btn').addEventListener('click', function () {
-      document.getElementById('login-container').style.display = 'block';
-      document.getElementById('admin-container').style.display = 'none';
+      // Remove login state from sessionStorage
+      sessionStorage.removeItem('loggedIn');
+      window.location.href = '/portfolio/login.html';  // Redirect to login page
     });
   </script>
 
