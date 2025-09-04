@@ -1,7 +1,3 @@
-Here’s a **README** file you can use for your GitHub project:
-
----
-
 # Personal Portfolio of Abdullah Md. Shahporan
 
 A personal portfolio management system where I can manage Education and Projects. The system includes features like form responses, education management, project management, and an admin login system with a user-friendly UI.
